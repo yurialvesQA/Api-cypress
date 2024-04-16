@@ -1,0 +1,196 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 0,
+    "pending": 0,
+    "failures": 5,
+    "start": "2024-04-16T15:15:11.876Z",
+    "end": "2024-04-16T15:15:16.849Z",
+    "duration": 4973,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "770d30b1-0a8d-4d33-94d4-ccbc0f571d31",
+      "title": "",
+      "fullFile": "cypress/e2e/comparar-api.cy.js",
+      "file": "cypress/e2e/comparar-api.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b79f2e50-969f-408c-9788-260761bba4c8",
+          "title": "Testes de comparação entre versões V2 e V3 de APIs",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Comparar valores entre versões de APIs na Data: 2023-01-01",
+              "fullTitle": "Testes de comparação entre versões V2 e V3 de APIs Comparar valores entre versões de APIs na Data: 2023-01-01",
+              "timedOut": null,
+              "duration": 1865,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Loop sobre as datas de startDate até endDate\n// Solicitação GET para versão 2\ncy.request({\n  method: 'GET',\n  url: urlv2 + formattedDate,\n  auth: {\n    username: username,\n    password: password\n  }\n}).then(responseV2 => {\n  expect(responseV2.status).to.eq(200); // Verifica se a requisição foi bem-sucedida\n  // Solicitação GET para versão 3\n  cy.request({\n    method: 'GET',\n    url: urlv3 + formattedDate,\n    auth: {\n      username: username,\n      password: password\n    }\n  }).then(responseV3 => {\n    expect(responseV3.status).to.eq(200); // Verifica se a requisição foi bem-sucedida\n    // Comparar os valores dos campos JSON\n    expect(responseV2.body.Data, `Valor do campo Data na data ${formattedDate} na V2`).to.eq(responseV3.body.Data);\n    expect(responseV2.body.Disponivel, `Valor do campo Disponivel na data ${formattedDate} na V2`).to.eq(responseV3.body.Disponivel);\n    expect(responseV2.body.Futuro, `Valor do campo Futuro na data ${formattedDate} na V2`).to.eq(responseV3.body.Futuro);\n    expect(responseV2.body.Bloqueado, `Valor do campo Bloqueado na data ${formattedDate} na V2`).to.eq(responseV3.body.Bloqueado);\n    expect(responseV2.body.BloqueadoAteAtivacao, `Valor do campo BloqueadoAteAtivacao na data ${formattedDate} na V2`).to.eq(responseV3.body.BloqueadoAteAtivacao);\n    expect(responseV2.body.LiberadoParaUso, `Valor do campo LiberadoParaUso na data ${formattedDate} na V2`).to.eq(responseV3.body.LiberadoParaUso);\n  });\n});",
+              "err": {
+                "message": "AssertionError: Valor do campo LiberadoParaUso na data 2023-01-01 na V2: expected 0 to equal -11646.7",
+                "estack": "AssertionError: Valor do campo LiberadoParaUso na data 2023-01-01 na V2: expected 0 to equal -11646.7\n    at Context.eval (webpack:///./cypress/e2e/comparar-api.cy.js:48:128)",
+                "diff": null
+              },
+              "uuid": "a1808a9d-d8cb-4ca2-a93b-53ae9ef26477",
+              "parentUUID": "b79f2e50-969f-408c-9788-260761bba4c8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Comparar valores entre versões de APIs na Data: 2023-01-02",
+              "fullTitle": "Testes de comparação entre versões V2 e V3 de APIs Comparar valores entre versões de APIs na Data: 2023-01-02",
+              "timedOut": null,
+              "duration": 720,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Loop sobre as datas de startDate até endDate\n// Solicitação GET para versão 2\ncy.request({\n  method: 'GET',\n  url: urlv2 + formattedDate,\n  auth: {\n    username: username,\n    password: password\n  }\n}).then(responseV2 => {\n  expect(responseV2.status).to.eq(200); // Verifica se a requisição foi bem-sucedida\n  // Solicitação GET para versão 3\n  cy.request({\n    method: 'GET',\n    url: urlv3 + formattedDate,\n    auth: {\n      username: username,\n      password: password\n    }\n  }).then(responseV3 => {\n    expect(responseV3.status).to.eq(200); // Verifica se a requisição foi bem-sucedida\n    // Comparar os valores dos campos JSON\n    expect(responseV2.body.Data, `Valor do campo Data na data ${formattedDate} na V2`).to.eq(responseV3.body.Data);\n    expect(responseV2.body.Disponivel, `Valor do campo Disponivel na data ${formattedDate} na V2`).to.eq(responseV3.body.Disponivel);\n    expect(responseV2.body.Futuro, `Valor do campo Futuro na data ${formattedDate} na V2`).to.eq(responseV3.body.Futuro);\n    expect(responseV2.body.Bloqueado, `Valor do campo Bloqueado na data ${formattedDate} na V2`).to.eq(responseV3.body.Bloqueado);\n    expect(responseV2.body.BloqueadoAteAtivacao, `Valor do campo BloqueadoAteAtivacao na data ${formattedDate} na V2`).to.eq(responseV3.body.BloqueadoAteAtivacao);\n    expect(responseV2.body.LiberadoParaUso, `Valor do campo LiberadoParaUso na data ${formattedDate} na V2`).to.eq(responseV3.body.LiberadoParaUso);\n  });\n});",
+              "err": {
+                "message": "AssertionError: Valor do campo LiberadoParaUso na data 2023-01-02 na V2: expected 0 to equal -11646.7",
+                "estack": "AssertionError: Valor do campo LiberadoParaUso na data 2023-01-02 na V2: expected 0 to equal -11646.7\n    at Context.eval (webpack:///./cypress/e2e/comparar-api.cy.js:48:128)",
+                "diff": null
+              },
+              "uuid": "376245ba-5fb9-452d-ac08-7e731ad4e8bf",
+              "parentUUID": "b79f2e50-969f-408c-9788-260761bba4c8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Comparar valores entre versões de APIs na Data: 2023-01-03",
+              "fullTitle": "Testes de comparação entre versões V2 e V3 de APIs Comparar valores entre versões de APIs na Data: 2023-01-03",
+              "timedOut": null,
+              "duration": 670,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Loop sobre as datas de startDate até endDate\n// Solicitação GET para versão 2\ncy.request({\n  method: 'GET',\n  url: urlv2 + formattedDate,\n  auth: {\n    username: username,\n    password: password\n  }\n}).then(responseV2 => {\n  expect(responseV2.status).to.eq(200); // Verifica se a requisição foi bem-sucedida\n  // Solicitação GET para versão 3\n  cy.request({\n    method: 'GET',\n    url: urlv3 + formattedDate,\n    auth: {\n      username: username,\n      password: password\n    }\n  }).then(responseV3 => {\n    expect(responseV3.status).to.eq(200); // Verifica se a requisição foi bem-sucedida\n    // Comparar os valores dos campos JSON\n    expect(responseV2.body.Data, `Valor do campo Data na data ${formattedDate} na V2`).to.eq(responseV3.body.Data);\n    expect(responseV2.body.Disponivel, `Valor do campo Disponivel na data ${formattedDate} na V2`).to.eq(responseV3.body.Disponivel);\n    expect(responseV2.body.Futuro, `Valor do campo Futuro na data ${formattedDate} na V2`).to.eq(responseV3.body.Futuro);\n    expect(responseV2.body.Bloqueado, `Valor do campo Bloqueado na data ${formattedDate} na V2`).to.eq(responseV3.body.Bloqueado);\n    expect(responseV2.body.BloqueadoAteAtivacao, `Valor do campo BloqueadoAteAtivacao na data ${formattedDate} na V2`).to.eq(responseV3.body.BloqueadoAteAtivacao);\n    expect(responseV2.body.LiberadoParaUso, `Valor do campo LiberadoParaUso na data ${formattedDate} na V2`).to.eq(responseV3.body.LiberadoParaUso);\n  });\n});",
+              "err": {
+                "message": "AssertionError: Valor do campo LiberadoParaUso na data 2023-01-03 na V2: expected 0 to equal -11646.7",
+                "estack": "AssertionError: Valor do campo LiberadoParaUso na data 2023-01-03 na V2: expected 0 to equal -11646.7\n    at Context.eval (webpack:///./cypress/e2e/comparar-api.cy.js:48:128)",
+                "diff": null
+              },
+              "uuid": "83b52d72-577b-403c-88eb-228e71a137e1",
+              "parentUUID": "b79f2e50-969f-408c-9788-260761bba4c8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Comparar valores entre versões de APIs na Data: 2023-01-04",
+              "fullTitle": "Testes de comparação entre versões V2 e V3 de APIs Comparar valores entre versões de APIs na Data: 2023-01-04",
+              "timedOut": null,
+              "duration": 691,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Loop sobre as datas de startDate até endDate\n// Solicitação GET para versão 2\ncy.request({\n  method: 'GET',\n  url: urlv2 + formattedDate,\n  auth: {\n    username: username,\n    password: password\n  }\n}).then(responseV2 => {\n  expect(responseV2.status).to.eq(200); // Verifica se a requisição foi bem-sucedida\n  // Solicitação GET para versão 3\n  cy.request({\n    method: 'GET',\n    url: urlv3 + formattedDate,\n    auth: {\n      username: username,\n      password: password\n    }\n  }).then(responseV3 => {\n    expect(responseV3.status).to.eq(200); // Verifica se a requisição foi bem-sucedida\n    // Comparar os valores dos campos JSON\n    expect(responseV2.body.Data, `Valor do campo Data na data ${formattedDate} na V2`).to.eq(responseV3.body.Data);\n    expect(responseV2.body.Disponivel, `Valor do campo Disponivel na data ${formattedDate} na V2`).to.eq(responseV3.body.Disponivel);\n    expect(responseV2.body.Futuro, `Valor do campo Futuro na data ${formattedDate} na V2`).to.eq(responseV3.body.Futuro);\n    expect(responseV2.body.Bloqueado, `Valor do campo Bloqueado na data ${formattedDate} na V2`).to.eq(responseV3.body.Bloqueado);\n    expect(responseV2.body.BloqueadoAteAtivacao, `Valor do campo BloqueadoAteAtivacao na data ${formattedDate} na V2`).to.eq(responseV3.body.BloqueadoAteAtivacao);\n    expect(responseV2.body.LiberadoParaUso, `Valor do campo LiberadoParaUso na data ${formattedDate} na V2`).to.eq(responseV3.body.LiberadoParaUso);\n  });\n});",
+              "err": {
+                "message": "AssertionError: Valor do campo LiberadoParaUso na data 2023-01-04 na V2: expected 0 to equal -11646.7",
+                "estack": "AssertionError: Valor do campo LiberadoParaUso na data 2023-01-04 na V2: expected 0 to equal -11646.7\n    at Context.eval (webpack:///./cypress/e2e/comparar-api.cy.js:48:128)",
+                "diff": null
+              },
+              "uuid": "eb09d69f-1dbd-46e1-9e72-cf9793801d01",
+              "parentUUID": "b79f2e50-969f-408c-9788-260761bba4c8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Comparar valores entre versões de APIs na Data: 2023-01-05",
+              "fullTitle": "Testes de comparação entre versões V2 e V3 de APIs Comparar valores entre versões de APIs na Data: 2023-01-05",
+              "timedOut": null,
+              "duration": 682,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Loop sobre as datas de startDate até endDate\n// Solicitação GET para versão 2\ncy.request({\n  method: 'GET',\n  url: urlv2 + formattedDate,\n  auth: {\n    username: username,\n    password: password\n  }\n}).then(responseV2 => {\n  expect(responseV2.status).to.eq(200); // Verifica se a requisição foi bem-sucedida\n  // Solicitação GET para versão 3\n  cy.request({\n    method: 'GET',\n    url: urlv3 + formattedDate,\n    auth: {\n      username: username,\n      password: password\n    }\n  }).then(responseV3 => {\n    expect(responseV3.status).to.eq(200); // Verifica se a requisição foi bem-sucedida\n    // Comparar os valores dos campos JSON\n    expect(responseV2.body.Data, `Valor do campo Data na data ${formattedDate} na V2`).to.eq(responseV3.body.Data);\n    expect(responseV2.body.Disponivel, `Valor do campo Disponivel na data ${formattedDate} na V2`).to.eq(responseV3.body.Disponivel);\n    expect(responseV2.body.Futuro, `Valor do campo Futuro na data ${formattedDate} na V2`).to.eq(responseV3.body.Futuro);\n    expect(responseV2.body.Bloqueado, `Valor do campo Bloqueado na data ${formattedDate} na V2`).to.eq(responseV3.body.Bloqueado);\n    expect(responseV2.body.BloqueadoAteAtivacao, `Valor do campo BloqueadoAteAtivacao na data ${formattedDate} na V2`).to.eq(responseV3.body.BloqueadoAteAtivacao);\n    expect(responseV2.body.LiberadoParaUso, `Valor do campo LiberadoParaUso na data ${formattedDate} na V2`).to.eq(responseV3.body.LiberadoParaUso);\n  });\n});",
+              "err": {
+                "message": "AssertionError: Valor do campo LiberadoParaUso na data 2023-01-05 na V2: expected 0 to equal -11646.7",
+                "estack": "AssertionError: Valor do campo LiberadoParaUso na data 2023-01-05 na V2: expected 0 to equal -11646.7\n    at Context.eval (webpack:///./cypress/e2e/comparar-api.cy.js:48:128)",
+                "diff": null
+              },
+              "uuid": "6339dfb1-3a94-4810-becb-997cb542d76e",
+              "parentUUID": "b79f2e50-969f-408c-9788-260761bba4c8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "a1808a9d-d8cb-4ca2-a93b-53ae9ef26477",
+            "376245ba-5fb9-452d-ac08-7e731ad4e8bf",
+            "83b52d72-577b-403c-88eb-228e71a137e1",
+            "eb09d69f-1dbd-46e1-9e72-cf9793801d01",
+            "6339dfb1-3a94-4810-becb-997cb542d76e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4628,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
